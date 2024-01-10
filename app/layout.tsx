@@ -88,7 +88,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </SectionContainer>
         </ThemeProviders>
       </body>
-      <Script id="breadButter">
+      <Script id="breadButter" strategy="lazyOnload">
         {`
           window.initBreadButter = function() {
             BreadButter.configure({ app_id: "659dabcaea1ee034ad7874c2" });
