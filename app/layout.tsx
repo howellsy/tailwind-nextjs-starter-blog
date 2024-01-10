@@ -92,8 +92,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {`
           window.initBreadButter = function() {
             BreadButter.configure({ app_id: "659dabcaea1ee034ad7874c2", continue_with_position: {
-              bottom: "10%",
-              right: "10%",
+              bottom: "10px",
+              right: "10px",
             }});
             BreadButter.ui.continueWith();
           };
