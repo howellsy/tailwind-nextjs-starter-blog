@@ -91,7 +91,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <Script id="breadButter" strategy="lazyOnload">
         {`
           window.initBreadButter = function() {
-            BreadButter.configure({ app_id: "659dabcaea1ee034ad7874c2" });
+            BreadButter.configure({ app_id: "659dabcaea1ee034ad7874c2", continue_with_position: {
+              bottom: "10%",
+              right: "10%",
+            }});
             BreadButter.ui.continueWith();
           };
           (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
