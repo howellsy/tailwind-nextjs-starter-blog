@@ -111,7 +111,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   }
               },
             });
-            BreadButter.ui.continueWith();
+            BreadButter.ui.continueWith({
+              button_theme: 'round-icons',
+              destination_url: 'https://tailwind-nextjs-starter-blog-two.vercel.app/about',
+              expand_email_address: false,
+              show_login_focus: true,
+              show_logged_in_profile: true,
+              delay_seconds: 20,
+            });
           };
           (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
         `}
