@@ -39,6 +39,7 @@ const Header = () => {
           ))}
         <SearchButton />
         <ThemeSwitch />
+        <div id="bb-profile-widget" />
         <MobileNav />
       </div>
     </header>
