@@ -16,6 +16,7 @@ export default function Projects() {
             Showcase your projects with a hero image (16 x 9)
           </p>
         </div>
+        <div id="bb-signin-widget" />
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
             {projectsData.map((d) => (

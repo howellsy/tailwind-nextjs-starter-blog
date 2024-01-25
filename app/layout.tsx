@@ -119,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               show_logged_in_profile: true,
               delay_seconds: 20,
             });
+            BreadButter.ui.signIn("bb-signin-widget");
           };
           (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
         `}
