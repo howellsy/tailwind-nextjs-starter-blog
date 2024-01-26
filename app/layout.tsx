@@ -74,6 +74,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <Script id="breadButter" strategy="beforeInteractive">
+        {`
+          window.initBreadButter = function() {
+            BreadButter.configure({ app_id: "659dabcaea1ee034ad7874c2", continue_with_position: {
+              bottom: "10px",
+              right: "10px",
+            }});
+            BreadButter.ui.applyFormControl({
+              form: 'contactForm',
+              first_name: 'firstName',
+              last_name: 'lastName',
+              email: 'email',
+              submit: 'submitButton',
+              });
+          };
+          (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
+        `}
+      </Script>
       <body className="jamie-app bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
@@ -88,40 +106,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </SectionContainer>
         </ThemeProviders>
       </body>
-      <Script id="breadButter" strategy="lazyOnload">
-        {`
-          window.initBreadButter = function() {
-            BreadButter.configure({ app_id: "659dabcaea1ee034ad7874c2", continue_with_position: {
-              bottom: "10px",
-              right: "10px",
-            }});
-            BreadButter.ui.contentPreview({
-              restricted_links: ["/about"],
-              scroll_limit: 0,
-              time_limit: 0,
-              clickable_content: false,
-              fixed_height: 75,
-              locale: {
-                 POPUP: {
-                      TEXT_1: 'HEADER',    
-                      TEXT_2: 'SUB HEADER',
-                      TEXT_3: 'BOTTOM TEXT',
-                      TEXT_3_2: 'BOTTOM TEXT EXPANDED',
-                      MORE: 'EXPAND LABEL',
-                  }
-              },
-            });
-            BreadButter.ui.continueWith({
-              button_theme: 'round-icons',
-              destination_url: 'https://tailwind-nextjs-starter-blog-two.vercel.app/about',
-              expand_email_address: false,
-              show_logged_in_profile: true,
-            });
-            BreadButter.ui.addProfileWidget('bb-profile-widget');
-          };
-          (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
-        `}
-      </Script>
     </html>
   )
 }
