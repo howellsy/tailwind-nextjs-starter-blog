@@ -81,13 +81,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               bottom: "10px",
               right: "10px",
             }});
-            BreadButter.ui.applyFormControl({
-              form: 'contactForm',
-              first_name: 'firstName',
-              last_name: 'lastName',
-              email: 'email',
-              submit: 'submitButton',
-              });
+            BreadButter.ui.addNewsletterWidget({
+              custom_event_code: 'news_signup',
+              delay_seconds: 10,
+              header_text: 'Please sign up for our newsletter',
+              main_text: 'Receive the latest news and updates from our team.',
+              success_header: 'Great to have you on board!',
+              success_text: 'Thanks for subscribing to our newsletter.',
+              image_type: 'fill',
+              image_source: '/static/images/google.png',
+            });
           };
           (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
         `}
