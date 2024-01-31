@@ -91,6 +91,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               image_type: 'fill',
               image_source: '/static/images/google.png',
             });
+            BreadButter.ui.applyText('projects-intro', "Welcome %FIRST_NAME% %LAST_NAME%, your name is %NAME% and your email is %EMAIL%", {
+              type: 'TYPE'
+            });
           };
           (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
         `}
