@@ -1,8 +1,9 @@
 interface Project {
-  title: string,
-  description: string,
-  href?: string,
-  imgSrc?: string,
+  title: string
+  description: string
+  href?: string
+  imgSrc?: string
+  id?: string
 }
 
 const projectsData: Project[] = [
@@ -21,6 +22,7 @@ const projectsData: Project[] = [
     forgotten headphones with this simple yet affordable solution.`,
     imgSrc: '/static/images/time-machine.jpg',
     href: '/blog/the-time-machine',
+    id: 'time-machine-learn-more',
   },
 ]
 
