@@ -1,6 +1,7 @@
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
 import { genPageMetadata } from 'app/seo'
+import Script from 'next/script'
 
 export const metadata = genPageMetadata({ title: 'Projects' })
 
@@ -31,6 +32,25 @@ export default function Projects() {
           </div>
         </div>
       </div>
+      <Script id="breadButterContentGating">
+        {`
+          null == window.breadbutterQueue && (window.breadbutterQueue = []), window.injectBreadButter = function (e) { "undefined" != typeof BreadButter && BreadButter.init ? e() : window.breadbutterQueue.push(e) };
+          injectBreadButter(function () {
+              BreadButter.ui.contentGating({
+              locale: {
+                  CONTENT_GATING: {
+                      TITLE: "Your header goes here",
+                      SUBTITLE: "Your sub header goes here"
+                  }
+              },
+              scroll_limit: 0,
+              time_limit: 0,
+              image_source: '/static/images/google.png',
+              image_type: 'fill'
+          });
+          });
+        `}
+      </Script>
     </>
   )
 }
