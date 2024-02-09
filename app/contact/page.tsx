@@ -62,33 +62,11 @@ export default function Contact() {
           </form>
         </div>
       </div>
-      <Script id="breadButterFormControl">
-        {`
-          document.addEventListener("DOMContentLoaded", (event) => {
-            const firstName = 'input[name="firstName"]';
-            const lastName = 'input[name="lastName"]';
-            const email = 'input[name="email"]';
-            const submit = '#contactForm button[type=submit]';
-
-            const loadForm = ()=> {
-                const submitButton = document.querySelector(submit);
-                submitButton.addEventListener('click', async () => {
-                    await identifyUser();
-                });
-            };
-            
-            const identifyUser = () => {
-                return new Promise((resolve) => {
-                    const firstNameInput = document.querySelector(firstName).value;
-                    const lastNameInput = document.querySelector(lastName).value;
-                    const emailInput = document.querySelector(email).value;
-                    BreadButter.api.identifyUser(emailInput, firstNameInput, lastNameInput, resolve);
-                });
-            };
-            loadForm();
-          });
-        `}
-      </Script>
+      <Script
+        id="breadButterFormControl"
+        strategy="beforeInteractive"
+        src="./static/scripts/formControl.js"
+      />
     </>
   )
 }
