@@ -1,3 +1,4 @@
+/* eslint-disable */
 document.addEventListener("DOMContentLoaded", function(event) {
   const _name = 'input[name="FIELD_NAME"]';
   const _email = 'input[name="FIELD NAME"]';

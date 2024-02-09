@@ -1,3 +1,4 @@
+/* eslint-disable */
 document.addEventListener("DOMContentLoaded", function(event) {
   const _first_name = 'input[name="FIELD_NAME"]';
   const _last_name = 'input[name="FIELD_NAME"]';
