@@ -22,6 +22,7 @@ export default function Contact() {
               <input
                 className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
                 id="firstName"
+                name="firstName"
                 type="text"
                 placeholder="First Name"
               />
@@ -33,6 +34,7 @@ export default function Contact() {
               <input
                 className="focus:shadow-outline mb-3 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
                 id="lastName"
+                name="lastName"
                 type="text"
                 placeholder="Last Name"
               />
@@ -44,6 +46,7 @@ export default function Contact() {
               <input
                 className="focus:shadow-outline mb-3 w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
                 id="email"
+                name="email"
                 type="text"
               />
             </div>
@@ -53,7 +56,7 @@ export default function Contact() {
                 type="submit"
                 id="submitButton"
               >
-                Sign In
+                Submit
               </button>
             </div>
           </form>
@@ -61,7 +64,29 @@ export default function Contact() {
       </div>
       <Script id="breadButterFormControl">
         {`
+          document.addEventListener("DOMContentLoaded", (event) => {
+            const firstName = 'input[name="firstName"]';
+            const lastName = 'input[name="lastName"]';
+            const email = 'input[name="email"]';
+            const submit = '#contactForm button[type=submit]';
 
+            const loadForm = ()=> {
+                const submitButton = document.querySelector(submit);
+                submitButton.addEventListener('click', async () => {
+                    await identifyUser();
+                });
+            };
+            
+            const identifyUser = () => {
+                return new Promise((resolve) => {
+                    const firstNameInput = document.querySelector(firstName).value;
+                    const lastNameInput = document.querySelector(lastName).value;
+                    const emailInput = document.querySelector(email).value;
+                    BreadButter.api.identifyUser(emailInput, firstNameInput, lastNameInput, resolve);
+                });
+            };
+            loadForm();
+          });
         `}
       </Script>
     </>
