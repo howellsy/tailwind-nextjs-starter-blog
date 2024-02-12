@@ -65,7 +65,7 @@ export default function Contact() {
       <Script
         id="breadButterFormControl"
         strategy="beforeInteractive"
-        src="./static/scripts/formControl.js"
+        src="./static/scripts/populateForm.js"
       />
     </>
   )
