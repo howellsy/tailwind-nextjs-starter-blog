@@ -32,21 +32,29 @@ export default function Projects() {
           </div>
         </div>
       </div>
-      <Script id="breadButterContentGating">
+      <Script id="breadButterContactUs">
         {`
           null == window.breadbutterQueue && (window.breadbutterQueue = []), window.injectBreadButter = function (e) { "undefined" != typeof BreadButter && BreadButter.init ? e() : window.breadbutterQueue.push(e) };
           injectBreadButter(function () {
-              BreadButter.ui.contentGating({
-              locale: {
-                  CONTENT_GATING: {
-                      TITLE: "Your header goes here",
-                      SUBTITLE: "Your sub header goes here"
-                  }
+              BreadButter.ui.contactUs({
+              continue_with_position: {
+                  bottom: '145px',
+                  right: '120px',
               },
-              scroll_limit: 0,
-              time_limit: 0,
-              image_source: '/static/images/google.png',
-              image_type: 'fill'
+              show_phone: true,
+              show_company_name: true,
+              locale: {
+                  "CONTACT_US": {
+                      "ICON_NOTE": "Connect with a real person",
+                      "HEADER": "Connect with a real person",
+                      "TEXT_1": "Lets get started with your contact information",
+                      "TEXT_2": "We only receive what is needed to get in touch with you",
+                      "SUB_HEADER": "%FIRST_NAME%, how can we help?",
+                      "MESSAGE_INPUT": "Let us know how we can help",
+                      "BUTTON": "Send your message",
+                      "SUCCESS":  "Thanks for reaching out %FIRST_NAME%. We'll get back to you as soon as possible."
+                  }
+              }
           });
           });
         `}
