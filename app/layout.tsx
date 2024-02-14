@@ -81,6 +81,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               bottom: "10px",
               right: "10px",
             }});
+            BreadButter.ui.continueWith({
+              locale : {
+                "CUSTOM_DATA": {
+                    "HEADER": "Thanks for Signing Up",
+                    "SUB_HEADER": "We just have a few questions we'd like to ask you",
+                    "SUBMIT": "Submit",
+                    "MANDATORY": "This field is mandatory."
+                    }
+              },
+              custom_data: [
+                {
+                  custom_key: 'company_name',
+                  display_name: 'Company Name',
+                  type: 'textbox',
+                  mandatory: false,
+                },
+                {
+                  custom_key: 'phone',
+                  display_name: 'Phone Number',
+                  type: 'textbox',
+                  mandatory: true,
+                },
+                {
+                  custom_key: 'agree_toc',
+                  display_name: 'I agree to the <a href="www.google.com" target="_blank">terms & conditions</a>',
+                  type: 'checkbox',
+                  mandatory: true,
+                  default_value: true
+                }
+              ]
+            });
           };
           (function(d, s, id){ var js,fjs=d.getElementsByTagName(s)[0]; if(d.getElementById(id)) {return;} js = d.createElement(s); js.id = id; js.src = 'https://cdn.breadbutter.io/dist/breadbutter.7.1.0.955.min.js'; fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'breadbutter-js'));
         `}
