@@ -1,9 +1,9 @@
 /* eslint-disable */
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", (event) => {
   const _first_name = 'input[name="FIELD_NAME"]';
   const _last_name = 'input[name="FIELD_NAME"]';
   const _email = 'input[name="FIELD_NAME"]';
-  BreadButter.getProfile((profile)=> {
+  BreadButter.getProfile((profile) => {
       if (profile && profile.first_name)
           document.querySelector(_first_name).value = profile.first_name;
       if (profile && profile.last_name)
